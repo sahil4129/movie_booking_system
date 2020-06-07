@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1555785222 source:c:\users\goel`s\desktop\new folder (2)\movie_ticket\main.cpp
+	<iostream>
+	<vector>
+	<queue>
+	<algorithm>
+
