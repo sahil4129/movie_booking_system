@@ -16,19 +16,15 @@ void welcome();
 void  admin ()
 {
     int f6= total/160;
-    cout<<"hello";
     cout<<" Welcome Admin"<<endl<<endl;
     cout<<"All the seats status of movie"<<endl<<endl;
     cout<<" 1 : Superman2"<<" || 2 : Kalank "<<" || 3 : Khichdi 2";
     cout<<"Total No of Tickets sold"<<endl<<endl;
     cout<<" ";
-    cout<<"ii";
     cout<<f6<<endl<<endl;
     cout<<"Total Earnings"<<endl<<endl;
     cout<<" ";
     cout<<total;
-
-
 }
 
 void admin_bool()
