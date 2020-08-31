@@ -1,4 +1,4 @@
-pip install paramiko
+import paramiko
 host = "192.168.1.5"
 port = 22
 username = "sahil"
