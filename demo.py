@@ -1,15 +1,5 @@
-import paramiko
-host = "192.168.1.5"
-port = 22
-username = "sahil"
-password = "1234"
-
-command = "ls"
-
-ssh = paramiko.SSHClient()
-ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect(host, port, username, password)
-
-stdin, stdout, stderr = ssh.exec_command(command)
+paramiko.SSHClient().set_missing_host_key_policy(paramiko.AutoAddPolicy())
+paramiko.SSHClient().connect("192.168.1.5",22, "sahil", "1234")
+stdin, stdout, stderr = ssh.exec_command("ls")
 lines = stdout.readlines()
 print(lines)
