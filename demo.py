@@ -1,2 +1,1 @@
-echo "hi"
-echo "mail done"
+echo"hi"
