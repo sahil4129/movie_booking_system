@@ -2,9 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "seatwindow.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui { class MainWindow;}
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -15,8 +16,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    SeatWindow *seatObj;
+
 private slots:
-    void on_adminLoginpushButton_clicked();
+    void on_adminLoginpushButton_clicked();    
+
+    void on_listMoviecomboBox_activated(const QString &arg1);
+
+    void on_adminLoginpushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;

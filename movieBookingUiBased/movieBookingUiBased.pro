@@ -18,14 +18,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     adminwindow.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    seatwindow.cpp
 
 HEADERS += \
     adminwindow.h \
-    mainwindow.h
+    mainwindow.h \
+    seatwindow.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    seatwindow.ui
 
 TRANSLATIONS += \
     movieBookingUiBased_en_IN.ts
@@ -34,3 +37,5 @@ TRANSLATIONS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=

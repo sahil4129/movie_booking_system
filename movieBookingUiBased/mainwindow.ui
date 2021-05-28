@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>806</width>
+    <height>637</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -89,13 +89,145 @@
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="mainlabal_2">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>140</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 19pt &quot;Serif&quot;;</string>
+    </property>
+    <property name="text">
+     <string>List Of Movies</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="listMoviecomboBox">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>190</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Select</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Super Man 2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Robot 2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Khichdi 2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Love Aaj Kal</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Kalam</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="mainlabal_3">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>140</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 19pt &quot;Serif&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Show Timings</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="timingcomboBox">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>190</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Select</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="mainlabal_4">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>250</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 19pt &quot;Serif&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Number of Tickets</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="ticketspinBox">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>290</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>30</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="adminLoginpushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>360</y>
+      <width>211</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select Seats</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>806</width>
      <height>22</height>
     </rect>
    </property>
