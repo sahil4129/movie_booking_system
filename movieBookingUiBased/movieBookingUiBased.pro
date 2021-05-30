@@ -17,16 +17,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     adminwindow.cpp \
+    invoice.cpp \
     main.cpp \
     mainwindow.cpp \
     seatwindow.cpp
 
 HEADERS += \
     adminwindow.h \
+    invoice.h \
     mainwindow.h \
     seatwindow.h
 
 FORMS += \
+    invoice.ui \
     mainwindow.ui \
     seatwindow.ui
 

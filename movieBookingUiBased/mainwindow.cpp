@@ -12,7 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-     std::cout<<"Login sucess";
     ui->adminUsernameLineEdit->setPlaceholderText("Username");
     ui->adminPasswordLineEdit->setPlaceholderText("password");
 }

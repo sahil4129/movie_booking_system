@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "seatwindow.h"
-
+#include "invoice.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow;}
 QT_END_NAMESPACE
@@ -17,7 +17,7 @@ public:
     ~MainWindow();
 
     SeatWindow *seatObj;
-
+    Invoice *invoiceMainObj;
 private slots:
     void on_adminLoginpushButton_clicked();    
 
