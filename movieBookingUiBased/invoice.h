@@ -2,9 +2,10 @@
 #define INVOICE_H
 
 #include <QWidget>
+#include "finalinvoice.h"
 
 namespace Ui {
-class Invoice;
+class Invoice; class inForm;
 }
 
 class Invoice : public QWidget
@@ -14,6 +15,8 @@ class Invoice : public QWidget
 public:
     explicit Invoice(QWidget *parent = nullptr);
     ~Invoice();
+    FinalInvoice *inv;
+
 public slots:
     void paymentPage(std::string movie,std::string timing , int tickets,std::vector<std::string>seats);
 private slots:
@@ -30,6 +33,7 @@ private:
     std::string movieTimingInvoice;
     int totalPrice;
     int totalRemainPrice;
+    std::vector<std::string>Inseats;
 };
 
 #endif // INVOICE_H

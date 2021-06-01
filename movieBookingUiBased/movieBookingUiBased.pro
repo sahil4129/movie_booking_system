@@ -16,19 +16,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    adminwindow.cpp \
+    adminpanel.cpp \
+    finalinvoice.cpp \
     invoice.cpp \
     main.cpp \
     mainwindow.cpp \
     seatwindow.cpp
 
 HEADERS += \
-    adminwindow.h \
+    adminpanel.h \
+    finalinvoice.h \
     invoice.h \
     mainwindow.h \
     seatwindow.h
 
 FORMS += \
+    adminpanel.ui \
+    finalinvoice.ui \
     invoice.ui \
     mainwindow.ui \
     seatwindow.ui
@@ -41,4 +45,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES +=
+DISTFILES += \
+    Files/movies.txt

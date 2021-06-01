@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "seatwindow.h"
 #include "invoice.h"
+#include "adminpanel.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow;}
 QT_END_NAMESPACE
@@ -18,6 +20,7 @@ public:
 
     SeatWindow *seatObj;
     Invoice *invoiceMainObj;
+    AdminPanel *adminObj;
 private slots:
     void on_adminLoginpushButton_clicked();    
 
@@ -25,7 +28,14 @@ private slots:
 
     void on_adminLoginpushButton_2_clicked();
 
+    void setMoviesTiming();
+    void setMoviesTimingList();
+    void on_adminLoginpushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
+    std::vector<QString>movies;
+    std::vector<QStringList>timing;
+
 };
 #endif // MAINWINDOW_H

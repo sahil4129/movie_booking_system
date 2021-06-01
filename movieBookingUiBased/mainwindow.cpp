@@ -1,12 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "adminwindow.h"
+#include "adminpanel.h"
 #include "iostream"
 #include "QString"
 #include "QPushButton"
 #include "QLineEdit"
 #include "QDebug"
 #include "QMessageBox"
+#include "QFile"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -14,6 +15,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->adminUsernameLineEdit->setPlaceholderText("Username");
     ui->adminPasswordLineEdit->setPlaceholderText("password");
+    setMoviesTiming();
+    setMoviesTimingList();
 }
 
 MainWindow::~MainWindow()
@@ -26,49 +29,33 @@ void MainWindow::on_adminLoginpushButton_clicked()
 {
     std::string username= ui->adminUsernameLineEdit->text().toStdString();
     std::string password= ui->adminPasswordLineEdit->text().toStdString();
-    std::cout<<"Login sucess";
-    adminWindow adminobj;
-    if(adminobj.adminLogin(username,password)){
-        ui->loginlabel->setText("Login sucess");
-        qDebug() << "Login sucess";
+    adminObj = new AdminPanel;
+    QMessageBox msgBox;
+    if(adminObj->adminLogin(username,password)){
+         msgBox.setText("Login Success!!");
+        adminObj->show();
     }else{
-        ui->loginlabel->setText("Login fails");
-
+        msgBox.setText("Login Failed ! Please Check Username/Password");
     }
+    msgBox.setStandardButtons(QMessageBox::Ok);
+    msgBox.setDefaultButton(QMessageBox::Ok);
+    msgBox.exec();
 }
 
 void MainWindow::on_listMoviecomboBox_activated(const QString &arg1)
 {
     ui->timingcomboBox->clear();
-
-    if(arg1 == "Super Man 2"){
-        ui->timingcomboBox->clear();
-        ui->timingcomboBox->addItem("9:30AM");
-        ui->timingcomboBox->addItem("12:00PM");
-        ui->timingcomboBox->addItem("15:30PM");
-    }
-    else if(arg1 == "Robot 2"){
-        ui->timingcomboBox->addItem("8:30AM");
-        ui->timingcomboBox->addItem("12:30PM");
-        ui->timingcomboBox->addItem("14:00PM");
-    }
-    else if(arg1 == "Kalam"){
-        ui->timingcomboBox->addItem("9:00AM");
-        ui->timingcomboBox->addItem("13:00PM");
-        ui->timingcomboBox->addItem("16:00PM");
-    }
-    else if(arg1 == "Love Aaj Kal"){
-        ui->timingcomboBox->addItem("11:30AM");
-        ui->timingcomboBox->addItem("14:30PM");
-        ui->timingcomboBox->addItem("17:30PM");
-    }
-    else if(arg1 == "Khichdi 2"){
-        ui->timingcomboBox->addItem("10:30AM");
-        ui->timingcomboBox->addItem("15:00PM");
-        ui->timingcomboBox->addItem("20:30PM");
-    }
-    else{
-        ui->timingcomboBox->addItem("Select");
+    for(int i=0;i<movies.size();i++){
+        if(arg1 == movies[i]){
+            ui->timingcomboBox->clear();
+            QStringList line3 = timing[i];
+            for ( const auto& j : line3  ){
+                    ui->timingcomboBox->addItem(j);
+             }
+        }else if(arg1 =="Select"){
+             ui->timingcomboBox->clear();
+             ui->timingcomboBox->addItem("Select");
+        }
     }
 }
 
@@ -91,4 +78,44 @@ void MainWindow::on_adminLoginpushButton_2_clicked()
     seatObj->textBoxSet(movie,timing,noOfTickets);
     seatObj->show();
     }
+}
+
+void MainWindow::setMoviesTiming(){
+    QFile file("../Files/movies.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        if(line!=""){
+            movies.push_back(line);
+        }
+    }
+
+
+    QFile file2("../Files/timing.txt");
+    if (!file2.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+
+    QTextStream in2(&file2);
+    while (!in2.atEnd()) {
+        QString line2 = in2.readLine();
+        if(line2!=""){
+            QStringList line3 = line2.split(",");
+            timing.push_back(line3);
+        }
+    }
+
+}
+
+void MainWindow::setMoviesTimingList(){
+    for(int i=0;i<movies.size();i++){
+        ui->listMoviecomboBox->addItem(movies[i]);
+    }
+}
+
+void MainWindow::on_adminLoginpushButton_3_clicked()
+{
+    close();
 }

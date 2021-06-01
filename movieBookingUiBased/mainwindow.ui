@@ -119,31 +119,6 @@
       <string>Select</string>
      </property>
     </item>
-    <item>
-     <property name="text">
-      <string>Super Man 2</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Robot 2</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Khichdi 2</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Love Aaj Kal</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Kalam</string>
-     </property>
-    </item>
    </widget>
    <widget class="QLabel" name="mainlabal_3">
     <property name="geometry">
@@ -219,6 +194,19 @@
     </property>
     <property name="text">
      <string>Select Seats</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="adminLoginpushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>560</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Close</string>
     </property>
    </widget>
   </widget>
