@@ -5,6 +5,9 @@
 #include "iostream"
 #include "QGridLayout"
 #include "QFile"
+#include "QSqlQuery"
+#include "QSqlError"
+
 Invoice::Invoice(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Invoice)
@@ -106,26 +109,24 @@ void Invoice::on_discoutpushButton_2_clicked()
      ui->discountTextEdit->setReadOnly(true);
      ui->totaltextEdit->setReadOnly(true);
 
-     std::vector<QStringList>codes;
+     std::vector<QString>codes;
+     std::vector<double>dis;
 
-      QFile file("../Files/discountCodes.txt");
-      if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-          return;
-
-      QTextStream in(&file);
-      while (!in.atEnd()) {
-          QString line = in.readLine();
-          if(line!=""){
-              QStringList line3 = line.split(",");
-              codes.push_back(line3);
+      QSqlQuery query("select * from discount_code");
+      QString user,pass;
+      if (!query.isActive()){
+            qDebug() << query.lastError().text();
+      }else{
+          while (query.next()) {
+           codes.push_back(query.value(1).toString());
+           dis.push_back(query.value(2).toDouble());
           }
-      }
+        }
 
       bool applied =false;
       for(int i=0;i<codes.size();i++){
-          QStringList line3 = codes[i];
-          if(ui->codeLineEdit->text() == line3.at(0)){
-              double discount =line3.at(1).toInt();
+          if(ui->codeLineEdit->text() == codes[i]){
+              double discount =dis[i];
               double discountPre= discount/100;
               QPalette *palette = new QPalette();
               palette->setColor(QPalette::Base,Qt::green);

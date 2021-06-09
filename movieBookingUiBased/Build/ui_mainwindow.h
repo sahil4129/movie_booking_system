@@ -44,6 +44,7 @@ public:
     QSpinBox *ticketspinBox;
     QPushButton *adminLoginpushButton_2;
     QPushButton *adminLoginpushButton_3;
+    QPushButton *adminLoginpushButton_4;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -102,6 +103,9 @@ public:
         adminLoginpushButton_3 = new QPushButton(centralwidget);
         adminLoginpushButton_3->setObjectName(QStringLiteral("adminLoginpushButton_3"));
         adminLoginpushButton_3->setGeometry(QRect(700, 560, 89, 25));
+        adminLoginpushButton_4 = new QPushButton(centralwidget);
+        adminLoginpushButton_4->setObjectName(QStringLiteral("adminLoginpushButton_4"));
+        adminLoginpushButton_4->setGeometry(QRect(10, 560, 89, 25));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -136,6 +140,7 @@ public:
         mainlabal_4->setText(QApplication::translate("MainWindow", "Number of Tickets", Q_NULLPTR));
         adminLoginpushButton_2->setText(QApplication::translate("MainWindow", "Select Seats", Q_NULLPTR));
         adminLoginpushButton_3->setText(QApplication::translate("MainWindow", "Close", Q_NULLPTR));
+        adminLoginpushButton_4->setText(QApplication::translate("MainWindow", "Update", Q_NULLPTR));
     } // retranslateUi
 
 };

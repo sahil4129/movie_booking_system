@@ -8,6 +8,13 @@
 #include "QDebug"
 #include "QMessageBox"
 #include "QFile"
+#include "QSqlDatabase"
+#include "QSqlQuery"
+#include "QSqlRecord"
+#include "QSqlError"
+#include "QSqlDriver"
+#include "QSqlQueryModel"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -15,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->adminUsernameLineEdit->setPlaceholderText("Username");
     ui->adminPasswordLineEdit->setPlaceholderText("password");
+    connectionOpen();
     setMoviesTiming();
     setMoviesTimingList();
 }
@@ -48,10 +56,13 @@ void MainWindow::on_listMoviecomboBox_activated(const QString &arg1)
     for(int i=0;i<movies.size();i++){
         if(arg1 == movies[i]){
             ui->timingcomboBox->clear();
-            QStringList line3 = timing[i];
-            for ( const auto& j : line3  ){
-                    ui->timingcomboBox->addItem(j);
-             }
+              auto itr = timing.find(i+1);
+              if (itr != timing.end() ) {
+                   QList<QString>t = itr->second;
+                   for (int j= 0; j < t.size(); ++j) {
+                        ui->timingcomboBox->addItem(t.at(j));
+                   }
+              }
         }else if(arg1 =="Select"){
              ui->timingcomboBox->clear();
              ui->timingcomboBox->addItem("Select");
@@ -81,41 +92,62 @@ void MainWindow::on_adminLoginpushButton_2_clicked()
 }
 
 void MainWindow::setMoviesTiming(){
-    QFile file("../Files/movies.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
 
-    QTextStream in(&file);
-    while (!in.atEnd()) {
-        QString line = in.readLine();
-        if(line!=""){
-            movies.push_back(line);
-        }
+    QSqlQuery query("select name from movieName");
+    if (!query.isActive()){
+          qDebug() << query.lastError().text();
+    }else{
+      while (query.next()) {
+          movies.push_back(query.value(0).toString());
+          // qDebug()<<query.value(0).toString();
+      }
     }
 
-
-    QFile file2("../Files/timing.txt");
-    if (!file2.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
-
-    QTextStream in2(&file2);
-    while (!in2.atEnd()) {
-        QString line2 = in2.readLine();
-        if(line2!=""){
-            QStringList line3 = line2.split(",");
-            timing.push_back(line3);
-        }
+    QSqlQuery query2("SELECT * FROM movies.movie_timings where movie_id in ( select id from movieName) ORDER by movie_id");
+    if (!query2.isActive()){
+          qDebug() << query2.lastError().text();
+    }else{
+      while (query2.next()) {
+           int ke =query2.value(1).toInt();
+           auto itr = timing.find(ke);
+          if (itr == timing.end() ) {
+            QList<QString>t;
+            t.append(query2.value(2).toString());
+             timing.insert({ ke, t});
+          } else {
+             itr->second.append(query2.value(2).toString());
+          }
+      }
     }
-
 }
 
 void MainWindow::setMoviesTimingList(){
     for(int i=0;i<movies.size();i++){
+        if(ui->listMoviecomboBox->findText(movies[i]) == -1){
         ui->listMoviecomboBox->addItem(movies[i]);
+        }
     }
 }
 
 void MainWindow::on_adminLoginpushButton_3_clicked()
 {
     close();
+}
+
+void MainWindow::on_adminLoginpushButton_4_clicked()
+{
+    setMoviesTiming();
+    setMoviesTimingList();
+}
+
+void MainWindow::connectionOpen(){
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+      db.setHostName("127.0.0.1");
+      db.setUserName("root");
+      db.setPassword("root");
+      db.setDatabaseName("movies");
+      if (!db.open()){
+         QMessageBox::critical(nullptr, QObject::tr("Database Error"), db.lastError().text());
+      }
 }

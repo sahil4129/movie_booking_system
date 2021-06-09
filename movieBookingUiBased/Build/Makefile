@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../../movieBookingUiBased -I. -I../../../../Qt5.9.9/5.9.9/gcc_64/include -I../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui -I../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I../../../../Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../../movieBookingUiBased -I. -I../../../../Qt5.9.9/5.9.9/gcc_64/include -I../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui -I../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql -I../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I../../../../Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/sahil/Qt5.9.9/5.9.9/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -38,7 +38,7 @@ DISTNAME      = movieBookingUiBased1.0.0
 DISTDIR = /home/sahil/Desktop/Qtproject/movieBookingUiBased/Build/.tmp/movieBookingUiBased1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-rpath,/home/sahil/Qt5.9.9/5.9.9/gcc_64/lib
-LIBS          = $(SUBLIBS) -L/home/sahil/Qt5.9.9/5.9.9/gcc_64/lib -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) -L/home/sahil/Qt5.9.9/5.9.9/gcc_64/lib -lQt5Widgets -lQt5Gui -lQt5Sql -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -72,6 +72,7 @@ OBJECTS       = adminpanel.o \
 		moc_mainwindow.o \
 		moc_seatwindow.o
 DIST          = ../Files/movies.txt \
+		../Files/mys.sql \
 		/home/Qt5.9.9/5.9.9/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/Qt5.9.9/5.9.9/gcc_64/mkspecs/common/unix.conf \
 		/home/Qt5.9.9/5.9.9/gcc_64/mkspecs/common/linux.conf \
@@ -456,6 +457,7 @@ Makefile: ../movieBookingUiBased.pro ../../../../Qt5.9.9/5.9.9/gcc_64/mkspecs/fe
 		../movieBookingUiBased.pro \
 		../../../../Qt5.9.9/5.9.9/gcc_64/lib/libQt5Widgets.prl \
 		../../../../Qt5.9.9/5.9.9/gcc_64/lib/libQt5Gui.prl \
+		../../../../Qt5.9.9/5.9.9/gcc_64/lib/libQt5Sql.prl \
 		../../../../Qt5.9.9/5.9.9/gcc_64/lib/libQt5Core.prl
 	$(QMAKE) -o Makefile ../movieBookingUiBased.pro -spec linux-g++
 ../../../../Qt5.9.9/5.9.9/gcc_64/mkspecs/features/spec_pre.prf:
@@ -641,6 +643,7 @@ Makefile: ../movieBookingUiBased.pro ../../../../Qt5.9.9/5.9.9/gcc_64/mkspecs/fe
 ../movieBookingUiBased.pro:
 ../../../../Qt5.9.9/5.9.9/gcc_64/lib/libQt5Widgets.prl:
 ../../../../Qt5.9.9/5.9.9/gcc_64/lib/libQt5Gui.prl:
+../../../../Qt5.9.9/5.9.9/gcc_64/lib/libQt5Sql.prl:
 ../../../../Qt5.9.9/5.9.9/gcc_64/lib/libQt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../movieBookingUiBased.pro -spec linux-g++
@@ -798,7 +801,7 @@ moc_adminpanel.cpp: ../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QWidget \
 		../adminpanel.h \
 		moc_predefs.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/bin/moc
-	/home/sahil/Qt5.9.9/5.9.9/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Qtproject/movieBookingUiBased -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtGui -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../adminpanel.h -o moc_adminpanel.cpp
+	/home/sahil/Qt5.9.9/5.9.9/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Qtproject/movieBookingUiBased -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtGui -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtSql -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../adminpanel.h -o moc_adminpanel.cpp
 
 moc_finalinvoice.cpp: ../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QWidget \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qwidget.h \
@@ -903,7 +906,7 @@ moc_finalinvoice.cpp: ../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QWidget
 		../finalinvoice.h \
 		moc_predefs.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/bin/moc
-	/home/sahil/Qt5.9.9/5.9.9/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Qtproject/movieBookingUiBased -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtGui -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../finalinvoice.h -o moc_finalinvoice.cpp
+	/home/sahil/Qt5.9.9/5.9.9/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Qtproject/movieBookingUiBased -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtGui -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtSql -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../finalinvoice.h -o moc_finalinvoice.cpp
 
 moc_invoice.cpp: ../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QWidget \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qwidget.h \
@@ -1009,7 +1012,7 @@ moc_invoice.cpp: ../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QWidget \
 		../invoice.h \
 		moc_predefs.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/bin/moc
-	/home/sahil/Qt5.9.9/5.9.9/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Qtproject/movieBookingUiBased -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtGui -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../invoice.h -o moc_invoice.cpp
+	/home/sahil/Qt5.9.9/5.9.9/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Qtproject/movieBookingUiBased -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtGui -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtSql -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../invoice.h -o moc_invoice.cpp
 
 moc_mainwindow.cpp: ../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QMainWindow \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -1118,10 +1121,11 @@ moc_mainwindow.cpp: ../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QMainWind
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QWidget \
 		../invoice.h \
 		../finalinvoice.h \
+		../adminpanel.h \
 		../mainwindow.h \
 		moc_predefs.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/bin/moc
-	/home/sahil/Qt5.9.9/5.9.9/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Qtproject/movieBookingUiBased -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtGui -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../mainwindow.h -o moc_mainwindow.cpp
+	/home/sahil/Qt5.9.9/5.9.9/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Qtproject/movieBookingUiBased -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtGui -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtSql -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../mainwindow.h -o moc_mainwindow.cpp
 
 moc_seatwindow.cpp: ../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QWidget \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qwidget.h \
@@ -1228,7 +1232,7 @@ moc_seatwindow.cpp: ../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QWidget \
 		../seatwindow.h \
 		moc_predefs.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/bin/moc
-	/home/sahil/Qt5.9.9/5.9.9/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Qtproject/movieBookingUiBased -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtGui -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../seatwindow.h -o moc_seatwindow.cpp
+	/home/sahil/Qt5.9.9/5.9.9/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Qtproject/movieBookingUiBased -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtWidgets -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtGui -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtSql -I/home/sahil/Qt5.9.9/5.9.9/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../seatwindow.h -o moc_seatwindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1381,13 +1385,8 @@ adminpanel.o: ../adminpanel.cpp ../adminpanel.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qinputmethod.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QButtonGroup \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QHeaderView \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qheaderview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qframe.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QComboBox \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qcombobox.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyleoption.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractspinbox.h \
@@ -1398,7 +1397,30 @@ adminpanel.o: ../adminpanel.cpp ../adminpanel.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyle.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtabbar.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtabwidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qrubberband.h
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qframe.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QHeaderView \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLabel \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlabel.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLineEdit \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextcursor.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextformat.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qpen.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QPushButton \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QDebug \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QMessageBox \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qdialog.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QFile
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o adminpanel.o ../adminpanel.cpp
 
 finalinvoice.o: ../finalinvoice.cpp ../finalinvoice.h \
@@ -1825,6 +1847,7 @@ main.o: ../main.cpp ../mainwindow.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QWidget \
 		../invoice.h \
 		../finalinvoice.h \
+		../adminpanel.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QApplication \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qapplication.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1942,6 +1965,7 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QWidget \
 		../invoice.h \
 		../finalinvoice.h \
+		../adminpanel.h \
 		ui_mainwindow.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QVariant \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QAction \
@@ -1993,13 +2017,25 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qspinbox.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QStatusBar \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstatusbar.h \
-		../adminpanel.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QString \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QDebug \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qdialog.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QFile
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QFile \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlDatabase \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlQuery \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlquery.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlRecord \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlrecord.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlError \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlerror.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlDriver \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqldriver.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlQueryModel \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlquerymodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../mainwindow.cpp
 
 seatwindow.o: ../seatwindow.cpp ../seatwindow.h \

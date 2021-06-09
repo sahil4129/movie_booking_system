@@ -32,10 +32,12 @@ private slots:
     void setMoviesTimingList();
     void on_adminLoginpushButton_3_clicked();
 
+    void on_adminLoginpushButton_4_clicked();
+    void connectionOpen();
 private:
     Ui::MainWindow *ui;
     std::vector<QString>movies;
-    std::vector<QStringList>timing;
+    std::map<int ,QList<QString>>timing;
 
 };
 #endif // MAINWINDOW_H

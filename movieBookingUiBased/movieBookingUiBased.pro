@@ -46,4 +46,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    Files/movies.txt
+    Files/movies.txt \
+    Files/mys.sql
+
+QT += sql

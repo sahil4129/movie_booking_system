@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>649</width>
-    <height>419</height>
+    <width>763</width>
+    <height>506</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>763</width>
+    <height>506</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -32,14 +38,174 @@
   <widget class="QPushButton" name="adminLoginpushButton_2">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>330</y>
+     <x>260</x>
+     <y>350</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Action</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="ActioncomboBox">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>140</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Select</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Add New</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Update</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Delete</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="listActioncomboBox">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>140</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Select</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Movie</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Coupon</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="movie">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>240</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="timing">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>240</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="code">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>310</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="adminLoginLabel">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>210</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Movie</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="adminLoginLabel_2">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>210</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Timing</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="adminLoginLabel_3">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>280</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Coupon</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="adminLoginpushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>430</y>
      <width>171</width>
-     <height>61</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>Close </string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="discount">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>310</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="adminLoginLabel_4">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>280</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Discount (%)</string>
    </property>
   </widget>
  </widget>

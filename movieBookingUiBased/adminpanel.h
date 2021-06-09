@@ -21,6 +21,15 @@ public slots:
 private slots:
  void on_adminLoginpushButton_2_clicked();
 
+ void on_ActioncomboBox_activated(const QString &arg1);
+
+ void actions(const QString &arg1, const QString &arg2);
+ void on_listActioncomboBox_activated(const QString &arg1);
+
+ void on_adminLoginpushButton_3_clicked();
+
+ void addMovieAndTiming(QString movie, QString timing);
+  void addCoupon(QString code,QString per);
 private:
     Ui::AdminPanel *ui;
 };
