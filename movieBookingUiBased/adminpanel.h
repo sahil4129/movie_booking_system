@@ -30,6 +30,7 @@ private slots:
 
  void addMovieAndTiming(QString movie, QString timing);
   void addCoupon(QString code,QString per);
+
 private:
     Ui::AdminPanel *ui;
 };

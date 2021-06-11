@@ -28,7 +28,6 @@ private slots:
 
     void on_adminLoginpushButton_2_clicked();
 
-    void setMoviesTiming();
     void setMoviesTimingList();
     void on_adminLoginpushButton_3_clicked();
 
@@ -36,8 +35,5 @@ private slots:
     void connectionOpen();
 private:
     Ui::MainWindow *ui;
-    std::vector<QString>movies;
-    std::map<int ,QList<QString>>timing;
-
 };
 #endif // MAINWINDOW_H

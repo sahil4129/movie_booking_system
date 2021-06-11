@@ -12,6 +12,7 @@ AdminPanel::AdminPanel(QWidget *parent) :
     ui(new Ui::AdminPanel)
 {
     ui->setupUi(this);
+    ui->NewcomboBox->hide();
     ui->timing->setDisabled(true);
     ui->movie->setDisabled(true);
     ui->code->setDisabled(true);
@@ -77,6 +78,22 @@ void AdminPanel::on_adminLoginpushButton_2_clicked()
             msgBox.setDefaultButton(QMessageBox::Ok);
             msgBox.exec();
         }
+        else if(action =="Delete"){
+            QString arg1 = ui->NewcomboBox->currentText();
+            if(actionItem == "Coupon"){
+                QSqlQuery query;
+                query.exec("DELETE FROM discount_code WHERE code = '"+arg1+"'");
+            }else if(actionItem == "Movie"){
+                QSqlQuery query;
+                query.exec("DELETE FROM discount_code WHERE name = '"+arg1+"'");
+            }
+
+            QMessageBox msgBox;
+            msgBox.setText("Deleted !!");
+            msgBox.setStandardButtons(QMessageBox::Ok);
+            msgBox.setDefaultButton(QMessageBox::Ok);
+            msgBox.exec();
+        }
         else{
             QMessageBox msgBox;
             msgBox.setText("Invalid Action !!");
@@ -101,6 +118,7 @@ void AdminPanel::actions(const QString &arg1, const QString &arg2)
 {
     QString actionItem = arg1;
     QString action = arg2;
+    ui->NewcomboBox->hide();
 
     if(action== "Add New"){
         if(actionItem == "Movie"){
@@ -122,6 +140,34 @@ void AdminPanel::actions(const QString &arg1, const QString &arg2)
             ui->discount->setDisabled(true);
         }
     }
+    else  if(action== "Update" || action == "Delete"){
+        ui->timing->setDisabled(true);
+        ui->movie->setDisabled(true);
+        ui->code->setDisabled(true);
+        ui->discount->setDisabled(true);
+        ui->NewcomboBox->clear();
+        if(actionItem == "Movie"){
+            QSqlQuery query("select name from movieName");
+            if (!query.isActive()){
+                  qDebug() << query.lastError().text();
+            }else{
+              while (query.next()) {
+                    ui->NewcomboBox->addItem(query.value(0).toString());
+              }
+            }
+        }
+        else if(actionItem == "Coupon"){
+                QSqlQuery query("select * from discount_code");
+                if (!query.isActive()){
+                      qDebug() << query.lastError().text();
+                }else{
+                  while (query.next()) {
+                        ui->NewcomboBox->addItem(query.value(1).toString());
+                  }
+                }
+        }
+        ui->NewcomboBox->show();
+    }
     else{
         ui->timing->setDisabled(true);
         ui->movie->setDisabled(true);
@@ -133,17 +179,30 @@ void AdminPanel::actions(const QString &arg1, const QString &arg2)
 void AdminPanel::addMovieAndTiming(QString movie , QString timing)
 {
     try {
-        QFile qFile("../Files/movies.txt");
-          if (qFile.open(QIODevice::WriteOnly| QIODevice::Append)) {
-            QTextStream out(&qFile); out << movie;
-            qFile.close();
-          }
 
-       QFile qFile2("../Files/timing.txt");
-         if (qFile2.open(QIODevice::WriteOnly| QIODevice::Append)) {
-              QTextStream out(&qFile2); out << timing;
-              qFile2.close();
-         }
+            QSqlQuery query;
+            query.prepare("INSERT INTO movieName (name) "
+                          "VALUES (:name)");
+            query.bindValue(":name", movie);
+            query.exec();
+
+            QSqlQuery query3("select id from movieName where name = '"+movie+"'");
+
+            QString movieId;
+            if (!query3.isActive()){
+                  qDebug() << query3.lastError().text();
+            }else{
+                while (query3.next()) {
+                  movieId= query3.value(0).toString();
+                }
+              }
+
+            QSqlQuery query2;
+            query2.prepare("INSERT INTO movie_timings (movie_id,timing) "
+                          "VALUES (:id,:timing)");
+            query2.bindValue(":id", movieId);
+            query2.bindValue(":timing", timing);
+            query2.exec();
          QMessageBox msgBox;
          msgBox.setText("Added !!");
          msgBox.setStandardButtons(QMessageBox::Ok);
@@ -162,18 +221,18 @@ void AdminPanel::addMovieAndTiming(QString movie , QString timing)
 void AdminPanel::addCoupon(QString code, QString per)
 {
     try{
+          QSqlQuery query2;
+          query2.prepare("INSERT INTO discount_code (code,percentage) "
+                          "VALUES (:cod,:per)");
+          query2.bindValue(":cod", code);
+          query2.bindValue(":per", per);
+          query2.exec();
 
-        QFile qFile("../Files/discountCodes.txt");
-           QString code2 = code+","+ per;
-          if (qFile.open(QIODevice::WriteOnly | QIODevice::Append)) {
-            QTextStream out(&qFile); out << code2;
-            qFile.close();
-          }
-            QMessageBox msgBox;
-            msgBox.setText("Added !!");
-            msgBox.setStandardButtons(QMessageBox::Ok);
-            msgBox.setDefaultButton(QMessageBox::Ok);
-            msgBox.exec();
+          QMessageBox msgBox;
+          msgBox.setText("Added !!");
+          msgBox.setStandardButtons(QMessageBox::Ok);
+          msgBox.setDefaultButton(QMessageBox::Ok);
+          msgBox.exec();
     }catch (error_t) {
         QMessageBox msgBox;
         msgBox.setText("Failed !");

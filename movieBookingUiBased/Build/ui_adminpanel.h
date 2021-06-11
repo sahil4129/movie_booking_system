@@ -38,6 +38,7 @@ public:
     QPushButton *adminLoginpushButton_3;
     QLineEdit *discount;
     QLabel *adminLoginLabel_4;
+    QComboBox *NewcomboBox;
 
     void setupUi(QWidget *AdminPanel)
     {
@@ -85,6 +86,9 @@ public:
         adminLoginLabel_4 = new QLabel(AdminPanel);
         adminLoginLabel_4->setObjectName(QStringLiteral("adminLoginLabel_4"));
         adminLoginLabel_4->setGeometry(QRect(340, 280, 91, 21));
+        NewcomboBox = new QComboBox(AdminPanel);
+        NewcomboBox->setObjectName(QStringLiteral("NewcomboBox"));
+        NewcomboBox->setGeometry(QRect(490, 270, 141, 31));
 
         retranslateUi(AdminPanel);
 
@@ -114,6 +118,12 @@ public:
         adminLoginLabel_3->setText(QApplication::translate("AdminPanel", "Coupon", Q_NULLPTR));
         adminLoginpushButton_3->setText(QApplication::translate("AdminPanel", "Close ", Q_NULLPTR));
         adminLoginLabel_4->setText(QApplication::translate("AdminPanel", "Discount (%)", Q_NULLPTR));
+        NewcomboBox->clear();
+        NewcomboBox->insertItems(0, QStringList()
+         << QApplication::translate("AdminPanel", "Select", Q_NULLPTR)
+         << QApplication::translate("AdminPanel", "Movie", Q_NULLPTR)
+         << QApplication::translate("AdminPanel", "Coupon", Q_NULLPTR)
+        );
     } // retranslateUi
 
 };

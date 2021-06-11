@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[11];
-    char stringdata0[233];
+    QByteArrayData data[10];
+    char stringdata0[217];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,17 +37,16 @@ QT_MOC_LITERAL(2, 43, 0), // ""
 QT_MOC_LITERAL(3, 44, 30), // "on_listMoviecomboBox_activated"
 QT_MOC_LITERAL(4, 75, 4), // "arg1"
 QT_MOC_LITERAL(5, 80, 33), // "on_adminLoginpushButton_2_cli..."
-QT_MOC_LITERAL(6, 114, 15), // "setMoviesTiming"
-QT_MOC_LITERAL(7, 130, 19), // "setMoviesTimingList"
-QT_MOC_LITERAL(8, 150, 33), // "on_adminLoginpushButton_3_cli..."
-QT_MOC_LITERAL(9, 184, 33), // "on_adminLoginpushButton_4_cli..."
-QT_MOC_LITERAL(10, 218, 14) // "connectionOpen"
+QT_MOC_LITERAL(6, 114, 19), // "setMoviesTimingList"
+QT_MOC_LITERAL(7, 134, 33), // "on_adminLoginpushButton_3_cli..."
+QT_MOC_LITERAL(8, 168, 33), // "on_adminLoginpushButton_4_cli..."
+QT_MOC_LITERAL(9, 202, 14) // "connectionOpen"
 
     },
     "MainWindow\0on_adminLoginpushButton_clicked\0"
     "\0on_listMoviecomboBox_activated\0arg1\0"
     "on_adminLoginpushButton_2_clicked\0"
-    "setMoviesTiming\0setMoviesTimingList\0"
+    "setMoviesTimingList\0"
     "on_adminLoginpushButton_3_clicked\0"
     "on_adminLoginpushButton_4_clicked\0"
     "connectionOpen"
@@ -60,7 +59,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -68,19 +67,17 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   54,    2, 0x08 /* Private */,
-       3,    1,   55,    2, 0x08 /* Private */,
-       5,    0,   58,    2, 0x08 /* Private */,
-       6,    0,   59,    2, 0x08 /* Private */,
-       7,    0,   60,    2, 0x08 /* Private */,
-       8,    0,   61,    2, 0x08 /* Private */,
-       9,    0,   62,    2, 0x08 /* Private */,
-      10,    0,   63,    2, 0x08 /* Private */,
+       1,    0,   49,    2, 0x08 /* Private */,
+       3,    1,   50,    2, 0x08 /* Private */,
+       5,    0,   53,    2, 0x08 /* Private */,
+       6,    0,   54,    2, 0x08 /* Private */,
+       7,    0,   55,    2, 0x08 /* Private */,
+       8,    0,   56,    2, 0x08 /* Private */,
+       9,    0,   57,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    4,
-    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -99,11 +96,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->on_adminLoginpushButton_clicked(); break;
         case 1: _t->on_listMoviecomboBox_activated((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 2: _t->on_adminLoginpushButton_2_clicked(); break;
-        case 3: _t->setMoviesTiming(); break;
-        case 4: _t->setMoviesTimingList(); break;
-        case 5: _t->on_adminLoginpushButton_3_clicked(); break;
-        case 6: _t->on_adminLoginpushButton_4_clicked(); break;
-        case 7: _t->connectionOpen(); break;
+        case 3: _t->setMoviesTimingList(); break;
+        case 4: _t->on_adminLoginpushButton_3_clicked(); break;
+        case 5: _t->on_adminLoginpushButton_4_clicked(); break;
+        case 6: _t->connectionOpen(); break;
         default: ;
         }
     }
@@ -134,13 +130,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 7;
     }
     return _id;
 }

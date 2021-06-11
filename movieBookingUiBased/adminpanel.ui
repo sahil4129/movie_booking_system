@@ -208,6 +208,31 @@
     <string>Discount (%)</string>
    </property>
   </widget>
+  <widget class="QComboBox" name="NewcomboBox">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>270</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Select</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Movie</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Coupon</string>
+    </property>
+   </item>
+  </widget>
  </widget>
  <resources/>
  <connections/>
