@@ -34,12 +34,13 @@ bool AdminPanel::adminLogin(std::string username, std::string password)
         while (query.next()) {
           user= query.value(1).toString();
           pass=query.value(2).toString();
+          if(username == user.toStdString() && password == pass.toStdString()){
+                return true;
+            }
         }
       }
 
-    if(username == user.toStdString() && password == pass.toStdString()){
-        return true;
-    }
+    
     return false;
 }
 
