@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FinalInvoice_t {
-    QByteArrayData data[13];
-    char stringdata0[146];
+    QByteArrayData data[16];
+    char stringdata0[162];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,13 +43,17 @@ QT_MOC_LITERAL(8, 62, 6), // "method"
 QT_MOC_LITERAL(9, 69, 12), // "totalTickets"
 QT_MOC_LITERAL(10, 82, 24), // "std::vector<std::string>"
 QT_MOC_LITERAL(11, 107, 7), // "Inseats"
-QT_MOC_LITERAL(12, 115, 30) // "on_discoutpushButton_2_clicked"
+QT_MOC_LITERAL(12, 115, 30), // "on_discoutpushButton_2_clicked"
+QT_MOC_LITERAL(13, 146, 11), // "updateSeats"
+QT_MOC_LITERAL(14, 158, 1), // "r"
+QT_MOC_LITERAL(15, 160, 1) // "c"
 
     },
     "FinalInvoice\0finalInvoice\0\0std::string\0"
     "name\0email\0number\0paid\0method\0"
     "totalTickets\0std::vector<std::string>\0"
-    "Inseats\0on_discoutpushButton_2_clicked"
+    "Inseats\0on_discoutpushButton_2_clicked\0"
+    "updateSeats\0r\0c"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,7 +63,7 @@ static const uint qt_meta_data_FinalInvoice[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,12 +71,14 @@ static const uint qt_meta_data_FinalInvoice[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    7,   24,    2, 0x0a /* Public */,
-      12,    0,   39,    2, 0x08 /* Private */,
+       1,    7,   29,    2, 0x0a /* Public */,
+      12,    0,   44,    2, 0x08 /* Private */,
+      13,    2,   45,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 3, QMetaType::Int, 0x80000000 | 3, QMetaType::Int, 0x80000000 | 10,    4,    5,    6,    7,    8,    9,   11,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   14,   15,
 
        0        // eod
 };
@@ -85,6 +91,7 @@ void FinalInvoice::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         switch (_id) {
         case 0: _t->finalInvoice((*reinterpret_cast< std::string(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< std::string(*)>(_a[5])),(*reinterpret_cast< int(*)>(_a[6])),(*reinterpret_cast< std::vector<std::string>(*)>(_a[7]))); break;
         case 1: _t->on_discoutpushButton_2_clicked(); break;
+        case 2: _t->updateSeats((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     }
@@ -115,13 +122,13 @@ int FinalInvoice::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

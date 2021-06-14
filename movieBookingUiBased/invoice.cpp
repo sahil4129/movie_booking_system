@@ -7,6 +7,8 @@
 #include "QFile"
 #include "QSqlQuery"
 #include "QSqlError"
+#include <chrono>
+#include <ctime>
 
 Invoice::Invoice(QWidget *parent) :
     QWidget(parent),
@@ -99,8 +101,32 @@ void Invoice::on_paypushButton_clicked()
     msgBox.setDefaultButton(QMessageBox::Ok);
     msgBox.exec();
 
-    inv = new FinalInvoice;
-    inv->finalInvoice(name,email,phone,totalRemainPrice,method,totalTicketsInvoice,Inseats);
+    if(paydone){
+        auto timenow =
+              std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+        QSqlQuery query2;
+        query2.prepare("INSERT INTO orders (name, email, phone, totai_paid, payment_method, total_tickets, seats, movie_name, movie_timing,date) "
+                        "VALUES (:name,:email,:phone,:total,:method,:tickets,:seats,:movieName,:movieTiming,:date)");
+        query2.bindValue(":name",ui->nameLineEdit->text());
+        query2.bindValue(":email", ui->emailLineEdit->text());
+        query2.bindValue(":phone",ui->phoneLineEdit->text());
+        query2.bindValue(":total",totalRemainPrice);
+        query2.bindValue(":method", ui->methodcomboBox->currentText());
+        query2.bindValue(":tickets", totalTicketsInvoice);
+        QString tmp_seat="";
+        for(int i=0;i<totalTicketsInvoice;i++){
+            tmp_seat +=QString::fromStdString(Inseats[i])+";";
+        }
+        query2.bindValue(":seats", tmp_seat);
+        query2.bindValue(":movieName",QString::fromStdString(movieNameInvoice));
+        query2.bindValue(":movieTiming",QString::fromStdString(movieTimingInvoice));
+        query2.bindValue(":date",QString::fromStdString(ctime(&timenow)));
+        query2.exec();
+        qDebug() << query2.lastError().text();
+
+        inv = new FinalInvoice;
+        inv->finalInvoice(name,email,phone,totalRemainPrice,method,totalTicketsInvoice,Inseats);
+        }
     }
 }
 

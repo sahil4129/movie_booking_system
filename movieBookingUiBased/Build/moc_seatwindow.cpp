@@ -76,7 +76,7 @@ static const uint qt_meta_data_SeatWindow[] = {
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    4,    5,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,    4,    5,
+    QMetaType::Bool, QMetaType::Int, QMetaType::Int,    4,    5,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    4,    5,
     QMetaType::Void, 0x80000000 | 9, 0x80000000 | 9, QMetaType::Int,   10,   11,   12,
 
@@ -91,7 +91,8 @@ void SeatWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_adminLoginpushButton_2_clicked(); break;
         case 1: _t->seatBooked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 2: _t->seatAlreadyBooked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 2: { bool _r = _t->seatAlreadyBooked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 3: _t->on_tableWidget_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 4: _t->textBoxSet((*reinterpret_cast< std::string(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         default: ;

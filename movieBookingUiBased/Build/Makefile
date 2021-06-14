@@ -1371,56 +1371,20 @@ adminpanel.o: ../adminpanel.cpp ../adminpanel.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qvector2d.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtouchdevice.h \
 		ui_adminpanel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QVariant \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QAction \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qaction.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qicon.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qactiongroup.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QApplication \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qcoreapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qeventloop.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qguiapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qinputmethod.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QButtonGroup \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QComboBox \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qcombobox.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qvalidator.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qregularexpression.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qslider.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyle.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtabbar.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtabwidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qrubberband.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qframe.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QHeaderView \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qheaderview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qitemselectionmodel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLabel \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLineEdit \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlineedit.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextcursor.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextformat.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qpen.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextoption.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QPushButton \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QDebug \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qdialog.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QFile
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QFile \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlQueryModel \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlquerymodel.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlQuery \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlquery.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlError \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlerror.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o adminpanel.o ../adminpanel.cpp
 
 finalinvoice.o: ../finalinvoice.cpp ../finalinvoice.h \
@@ -1524,56 +1488,7 @@ finalinvoice.o: ../finalinvoice.cpp ../finalinvoice.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qvector2d.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_finalinvoice.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QVariant \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QAction \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qaction.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qicon.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qactiongroup.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QApplication \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qcoreapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qeventloop.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qguiapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qinputmethod.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QButtonGroup \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QHeaderView \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qheaderview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qframe.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qitemselectionmodel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qvalidator.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qregularexpression.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qslider.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyle.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtabbar.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtabwidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qrubberband.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLabel \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLineEdit \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlineedit.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextcursor.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextformat.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qpen.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextoption.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QListWidget \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlistwidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlistview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QPushButton \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QTextEdit \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtextedit.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextdocument.h
+		ui_finalinvoice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o finalinvoice.o ../finalinvoice.cpp
 
 invoice.o: ../invoice.cpp ../invoice.h \
@@ -1679,54 +1594,6 @@ invoice.o: ../invoice.cpp ../invoice.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtouchdevice.h \
 		../finalinvoice.h \
 		ui_invoice.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QVariant \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QAction \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qaction.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qicon.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qactiongroup.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QApplication \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qcoreapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qeventloop.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qguiapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qinputmethod.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QButtonGroup \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QComboBox \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qcombobox.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qvalidator.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qregularexpression.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qslider.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyle.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtabbar.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtabwidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qrubberband.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qframe.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QHeaderView \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qheaderview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qitemselectionmodel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLabel \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLineEdit \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlineedit.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextcursor.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextformat.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qpen.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextoption.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QPushButton \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QTextEdit \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtextedit.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextdocument.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QDebug \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qmessagebox.h \
@@ -1736,7 +1603,13 @@ invoice.o: ../invoice.cpp ../invoice.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlayout.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QFile
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QFile \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlQuery \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlquery.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlError \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlerror.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o invoice.o ../invoice.cpp
 
 main.o: ../main.cpp ../mainwindow.h \
@@ -1967,57 +1840,17 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		../finalinvoice.h \
 		../adminpanel.h \
 		ui_mainwindow.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QVariant \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QAction \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qaction.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qactiongroup.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QApplication \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qcoreapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qeventloop.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qguiapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qinputmethod.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QButtonGroup \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QComboBox \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qcombobox.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qvalidator.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qregularexpression.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qslider.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyle.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtabbar.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qrubberband.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qframe.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QHeaderView \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qheaderview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qitemselectionmodel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLabel \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlabel.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QString \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QPushButton \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLineEdit \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qframe.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextcursor.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextformat.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qpen.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextoption.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QMenuBar \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qmenubar.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qmenu.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QPushButton \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QSpinBox \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qspinbox.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QStatusBar \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstatusbar.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QString \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QDebug \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qmessagebox.h \
@@ -2035,7 +1868,8 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlDriver \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqldriver.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlQueryModel \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlquerymodel.h
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlquerymodel.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qabstractitemmodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../mainwindow.cpp
 
 seatwindow.o: ../seatwindow.cpp ../seatwindow.h \
@@ -2142,59 +1976,16 @@ seatwindow.o: ../seatwindow.cpp ../seatwindow.h \
 		../invoice.h \
 		../finalinvoice.h \
 		ui_seatwindow.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QVariant \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QAction \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qaction.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qicon.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qactiongroup.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QApplication \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qcoreapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qeventloop.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qguiapplication.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qinputmethod.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QButtonGroup \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QHeaderView \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qheaderview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qframe.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qitemselectionmodel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qvalidator.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/qregularexpression.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qslider.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qstyle.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtabbar.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtabwidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qrubberband.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLabel \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QLineEdit \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qlineedit.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextcursor.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextformat.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qpen.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextoption.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QPushButton \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QTableWidget \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtablewidget.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtableview.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QTextEdit \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qtextedit.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtGui/qtextdocument.h \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtCore/QDebug \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qmessagebox.h \
-		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qdialog.h
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtWidgets/qdialog.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlQuery \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlquery.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/QSqlError \
+		../../../../Qt5.9.9/5.9.9/gcc_64/include/QtSql/qsqlerror.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o seatwindow.o ../seatwindow.cpp
 
 moc_adminpanel.o: moc_adminpanel.cpp 

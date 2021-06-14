@@ -20,7 +20,7 @@ public slots:
 
 private slots:
     void on_discoutpushButton_2_clicked();
-
+    void updateSeats(int r,int c);
 private:
     Ui::FinalInvoice *ui;
     std::vector<std::string>seats;

@@ -20,7 +20,7 @@ public:
 private slots:
     void on_adminLoginpushButton_2_clicked();
     void seatBooked(int row,int column);
-     void seatAlreadyBooked(int row,int column);
+     bool seatAlreadyBooked(int row,int column);
     void on_tableWidget_cellClicked(int row, int column);
 
 public slots:

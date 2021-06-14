@@ -104,7 +104,6 @@ public:
         ActioncomboBox->insertItems(0, QStringList()
          << QApplication::translate("AdminPanel", "Select", Q_NULLPTR)
          << QApplication::translate("AdminPanel", "Add New", Q_NULLPTR)
-         << QApplication::translate("AdminPanel", "Update", Q_NULLPTR)
          << QApplication::translate("AdminPanel", "Delete", Q_NULLPTR)
         );
         listActioncomboBox->clear();
