@@ -35,12 +35,10 @@ bool AdminPanel::adminLogin(std::string username, std::string password)
           user= query.value(1).toString();
           pass=query.value(2).toString();
           if(username == user.toStdString() && password == pass.toStdString()){
-                return true;
-            }
+              return true;
+          }
         }
       }
-
-    
     return false;
 }
 
@@ -81,14 +79,24 @@ void AdminPanel::on_adminLoginpushButton_2_clicked()
         }
         else if(action =="Delete"){
             QString arg1 = ui->NewcomboBox->currentText();
+            QString movieId="";
             if(actionItem == "Coupon"){
                 QSqlQuery query;
                 query.exec("DELETE FROM discount_code WHERE code = '"+arg1+"'");
             }else if(actionItem == "Movie"){
-                QSqlQuery query;
-                query.exec("DELETE FROM discount_code WHERE name = '"+arg1+"'");
+                QSqlQuery query1("select id from movieName where name = '"+arg1+"'");
+                if (!query1.isActive()){
+                      qDebug() << query1.lastError().text();
+                }else{
+                    while (query1.next()) {
+                      movieId= query1.value(0).toString();
+                    }
+                  }
+                QSqlQuery query2;
+                query2.exec("DELETE FROM movieName WHERE id = '"+movieId+"'");
+                QSqlQuery query3;
+                query3.exec("DELETE FROM movie_timings where movie_id  = '"+movieId+"'");
             }
-
             QMessageBox msgBox;
             msgBox.setText("Deleted !!");
             msgBox.setStandardButtons(QMessageBox::Ok);
